@@ -14,6 +14,8 @@ git clone https://github.com/nahrinrs/SalexTaxes.git
 ./run.sh
 ```
 
+## Design Document
+See https://github.com/nahrinrs/SalexTaxes/blob/master/docs/SalesTax%20Architecture%20Document.pdf
 
 
 
