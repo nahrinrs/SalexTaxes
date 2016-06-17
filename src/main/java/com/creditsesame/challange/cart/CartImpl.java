@@ -39,7 +39,7 @@ public class CartImpl implements Cart {
 			System.out.println(item.getCount() + "  "+ 
 					(item.isImported()? "imported ": "") + 
 					item.getDescription() + " " + 
-					"at " + item.getPrice().add(item.getSalesTax()) + "--->" +item.getItemType().toString());
+					"at " + item.getPrice().add(item.getSalesTax()) );
 		}
 		System.out.println("sales tax: " + salesTaxes.toString());
 		System.out.println("total: " + total.toString());

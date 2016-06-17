@@ -19,11 +19,17 @@ public class App
         Scanner s = new Scanner(System.in);
         int id = 1; 
         Cart cart = new CartImpl();
-        System.out.println("Please enter item name or type 'next' to exit: ");
+        System.out.println("Please enter item name or type 'print' to print the reciept or 'exit' to exit: ");
         while (s.hasNext() ){
         	String name = s.nextLine();
         	if (name.toLowerCase().equals("exit")){
         		break;
+        	}
+        	if (name.toLowerCase().equals("print")){
+        		cart.printReciept();
+        		cart.init();
+        		System.out.println("Please enter item name or type 'print' to print the reciept or 'exit' to exit: ");
+        		continue;
         	}
         	System.out.println("Please enter item description: ");
         	String desc = s.nextLine();
@@ -43,7 +49,6 @@ public class App
             System.out.println();
             System.out.println("Your answer: ");
             String uSelect1 = s.nextLine();
-            System.out.println(uSelect1.toUpperCase());
 			if (uSelect1.toUpperCase().equals("M")) {
 				item.setItemType(ItemType.MEDICAL);
 			} else if (uSelect1.toUpperCase().equals("B")) {
@@ -56,7 +61,7 @@ public class App
 				item.setItemType(ItemType.GOODS);
 			}
         	cart.addItemToCart(item);
-        	System.out.println("Please enter item name or type 'exit' to exit: ");
+        	System.out.println("Please enter item name or type 'print' to print the reciept or 'exit' to exit: ");
         }
         cart.printReciept();
     }
