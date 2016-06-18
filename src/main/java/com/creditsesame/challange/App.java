@@ -9,14 +9,34 @@ import com.creditsesame.challange.item.Item;
 import com.creditsesame.challange.item.ItemType;
 
 /**
- * Hello world!
+ * Sales Tax App
+ * @author nahrin
  *
  */
 public class App 
 {
+	/**
+	 * This method is going to start the app<BR>
+	 * @param args
+	 */
     public static void main( String[] args )
     {
-        Scanner s = new Scanner(System.in);
+        try {
+			PurchaseItems();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+	/**
+	 * @throws Exception
+	 * This method using STDIN to get input from user<BR>
+	 * It creates item object and add the item to cart<BR>
+	 * when user enters print or exit, it prints the receipt
+	 */
+	private static void PurchaseItems() throws Exception {
+		Scanner s = new Scanner(System.in);
         int id = 1; 
         Cart cart = new CartImpl();
         System.out.println("Please enter item name or type 'print' to print the reciept or 'exit' to exit: ");
@@ -64,5 +84,5 @@ public class App
         	System.out.println("Please enter item name or type 'print' to print the reciept or 'exit' to exit: ");
         }
         cart.printReciept();
-    }
+	}
 }
